@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
+<suite name="Login Suite">
+    <listeners>
+        <listener class-name="Listeners.ITestResultListener"/>
+        <listener class-name="Listeners.IInvokedMethodListener"/>
+    </listeners>
+    <test name="Login Test">
+        <classes>
+            <class name="Tests.TC01_LoginPage"/>
+        </classes>
+    </test>
+</suite>
+
