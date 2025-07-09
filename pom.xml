@@ -34,6 +34,7 @@
         <suite.Overview>TestRunner/OverviewSuite.xml</suite.Overview>
         <suite.FinishingOrder>TestRunner/FinishingOrderSuite.xml</suite.FinishingOrder>
         <suite.Regression>TestRunner/RegressionSuite.xml</suite.Regression>
+
     </properties>
 
     <build>
@@ -67,6 +68,7 @@
                     </argLine>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
@@ -121,10 +123,12 @@
                 </plugins>
             </build>
         </profile>
+
     </profiles>
 
 
     <dependencies>
+        
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -221,6 +225,7 @@
             <artifactId>allure-plugin-api</artifactId>
             <version>${AllureApi.Version}</version>
         </dependency>
+
     </dependencies>
 
 </project>
