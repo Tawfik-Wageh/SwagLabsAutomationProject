@@ -1,5 +1,0 @@
-[INFO] 08-07-2025 20:38:29 [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:31)] - null
-[INFO] 08-07-2025 20:38:31 [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:33)] - Edge driver is opened
-[INFO] 08-07-2025 20:38:31 [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:35)] - Page is redirected to the URL
-[INFO] 08-07-2025 20:38:31 [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CasevalidLoginTCStarted
-[INFO] 08-07-2025 20:38:35 [main] [Listeners.IInvokedMethodListener.afterInvocation(IInvokedMethodListener.java:47)] - Test CasevalidLoginTCFailed

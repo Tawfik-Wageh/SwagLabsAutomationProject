@@ -27,7 +27,7 @@ public class TC03_CartPage {
 
     @BeforeMethod
     public void setup() throws IOException {
-        // condition ? true : false
+        // condition ? true: false
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : getPropertyValue("environment", "BROWSER");
         LogsUtils.info(System.getProperty("browser"));
         setupDriver(browser);
