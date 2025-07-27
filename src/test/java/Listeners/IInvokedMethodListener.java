@@ -1,8 +1,8 @@
 package Listeners;
 
 
-import Utilities.LogsUtils;
-import Utilities.Utility;
+import Utils.GeneralUtils;
+import Utils.LogsUtil;
 import io.qameta.allure.Allure;
 import org.testng.IInvokedMethod;
 import org.testng.ITestContext;
@@ -28,12 +28,12 @@ public class IInvokedMethodListener implements org.testng.IInvokedMethodListener
 
         // ++++++++++++++++++++++++++
         //  to take a full screenshot using Shutterbug :
-        //  Utility.takingFullScreenshot(getDriver(), new P02_LandingPage(getDriver()).getNumberOfSelectedProductsOnCart());
+        //  GeneralUtils.takingFullScreenshot(getDriver(), new P02_LandingPage(getDriver()).getNumberOfSelectedProductsOnCart());
         // ++++++++++++++++++++++++++
 
         // ++++++++++++++++++++++++++++++++++++++
-        // to add last Logs's file to Allure Report
-        File logFile = Utility.getLatestFile(LogsUtils.LOGS_PATH);
+        // to add last Log's file to Allure Report
+        File logFile = GeneralUtils.getLatestFile(LogsUtil.LOGS_PATH);
         try {
             assert logFile != null;
             Allure.addAttachment("logs.log", Files.readString(Path.of(logFile.getPath())));
@@ -44,8 +44,8 @@ public class IInvokedMethodListener implements org.testng.IInvokedMethodListener
 
 
         if (testResult.getStatus() == ITestResult.FAILURE) {
-            LogsUtils.info("Test Case" + testResult.getName() + "Failed");
-            Utility.takingScreenShot(getDriver(), testResult.getName());
+            LogsUtil.info("Test Case" + testResult.getName() + "Failed");
+            GeneralUtils.takingScreenShot(getDriver(), testResult.getName());
 
         }
     }

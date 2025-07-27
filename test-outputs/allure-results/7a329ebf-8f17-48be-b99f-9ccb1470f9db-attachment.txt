@@ -1,3 +1,0 @@
-[INFO] - [10-07-2025 16:21:07] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:31)] - null
-[INFO] - [10-07-2025 16:21:09] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:33)] - Edge driver is opened
-[INFO] - [10-07-2025 16:21:09] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:35)] - Page is redirected to the URL

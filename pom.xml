@@ -15,18 +15,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <SeleniumVersion>4.34.0</SeleniumVersion>
         <TestNGVersion>7.11.0</TestNGVersion>
-        <Slf4jVersion>2.0.17</Slf4jVersion>
-        <Slf4jVersionAPI>2.0.17</Slf4jVersionAPI>
+        <Log4j.Slf4j2.Version>2.25.0</Log4j.Slf4j2.Version>
         <Log4jVersion>2.25.0</Log4jVersion>
+        <Log4jApiVersion>2.25.0</Log4jApiVersion>
         <GsonVersion>2.13.1</GsonVersion>
         <JavaFaker>1.0.2</JavaFaker>
-        <Allure.Version>2.29.1</Allure.Version>
+        <Allure.Version>2.24.0</Allure.Version>
         <CommonIO>2.19.0</CommonIO>
         <Aspectj.Version>1.9.24</Aspectj.Version>
         <Surefire>3.1.2</Surefire>
         <shutterBugVersion>1.6</shutterBugVersion>
-        <AllureMaven>2.15.2</AllureMaven>
-        <AllureApi.Version>2.34.1</AllureApi.Version>
+        <AllureMaven>2.12.0</AllureMaven>
+        <AllureApi.Version>2.24.0</AllureApi.Version>
+        <JsonPath.Version>2.9.0</JsonPath.Version>
+        <JsonSimple.Version>1.1.1</JsonSimple.Version>
         <suite.Login>TestRunner/LoginSuite.xml</suite.Login>
         <suite.Landing>TestRunner/LandingSuite.xml</suite.Landing>
         <suite.Cart>TestRunner/CartSuite.xml</suite.Cart>
@@ -128,7 +130,7 @@
 
 
     <dependencies>
-        
+
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -144,19 +146,12 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl -->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${Slf4jVersion}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${Slf4jVersionAPI}</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
+            <version>${Log4j.Slf4j2.Version}</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
@@ -164,6 +159,13 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>${Log4jVersion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${Log4jApiVersion}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
@@ -224,6 +226,20 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-plugin-api</artifactId>
             <version>${AllureApi.Version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${JsonPath.Version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>${JsonSimple.Version}</version>
         </dependency>
 
     </dependencies>

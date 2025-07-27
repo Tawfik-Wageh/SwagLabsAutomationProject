@@ -1,6 +1,6 @@
 package Listeners;
 
-import Utilities.LogsUtils;
+import Utils.LogsUtil;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
@@ -9,18 +9,18 @@ public class ITestResultListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
         ITestListener.super.onTestStart(result);
-        LogsUtils.info("Test Case" + result.getName() + "Started");
+        LogsUtil.info("Test Case" + result.getName() + "Started");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
         ITestListener.super.onTestSuccess(result);
-        LogsUtils.info("Test Case" + result.getName() + "Passed");
+        LogsUtil.info("Test Case" + result.getName() + "Passed");
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
         ITestListener.super.onTestSkipped(result);
-        LogsUtils.info("Test Case" + result.getName() + "Skipped");
+        LogsUtil.info("Test Case" + result.getName() + "Skipped");
     }
 }

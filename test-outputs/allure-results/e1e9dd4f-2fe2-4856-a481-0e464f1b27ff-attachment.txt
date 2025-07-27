@@ -1,0 +1,7 @@
+[DEBUG] - [27-07-2025 12:25:48] [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml"
+[INFO] - [27-07-2025 12:25:49] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml
+
+[INFO] - [27-07-2025 12:25:49] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:32)] - null
+[INFO] - [27-07-2025 12:25:51] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:34)] - Edge driver is opened
+[INFO] - [27-07-2025 12:25:52] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:36)] - Page is redirected to the URL

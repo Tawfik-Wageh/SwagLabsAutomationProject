@@ -1,7 +1,7 @@
 package Pages;
 
-import Utilities.LogsUtils;
-import Utilities.Utility;
+import Utils.GeneralUtils;
+import Utils.LogsUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,35 +10,39 @@ import java.util.List;
 import java.util.Set;
 
 public class P02_LandingPage {
+
+    // Variables :
     static float totalPrice = 0;
     private static List<WebElement> allProducts;
     private static List<WebElement> selectedProducts;
     private final WebDriver driver;
+
+    // Locators :
     private final By addToCartButtonForAllProducts = By.xpath("//button[@class]");
     private final By numberOfProductsOnCartIcon = By.className("shopping_cart_badge");
     private final By numberOfSelectedProducts = By.xpath("//button[.='REMOVE']");
     private final By cartIcon = By.className("shopping_cart_link");
     private final By pricesOfSelectedProducts = By.xpath("//button[.=\"REMOVE\"] //preceding-sibling::div[@class='inventory_item_price']");
 
-
+    // Constructor :
     public P02_LandingPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    // Getter Method for "numberOfProductsOnCartIcon" to use it in "afterInvocation" Method in "IInvokedMethodListener" Class (Encapsulation)
+    // Actions (Methods) :
     public By getNumberOfSelectedProductsOnCart() {
         return numberOfProductsOnCartIcon;
     }
 
     public P02_LandingPage addAllProductsToCart() {
         allProducts = driver.findElements(addToCartButtonForAllProducts);
-        LogsUtils.info("number of all products : " + allProducts.size());
+        LogsUtil.info("number of all products : " + allProducts.size());
         for (int i = 1; i <= allProducts.size(); i++) {
 
             //dynamic locator
             By addToCartButtonForAllProducts = By.xpath("(//button[@class])[" + i + "]");
 
-            Utility.clickingOnElement(driver, addToCartButtonForAllProducts);
+            GeneralUtils.clickingOnElement(driver, addToCartButtonForAllProducts);
         }
 
         return this;
@@ -46,10 +50,10 @@ public class P02_LandingPage {
 
     public String getNumberOfProductsOnCartIcon() {
         try {
-            LogsUtils.info("number of products on cart :" + Utility.getText(driver, numberOfProductsOnCartIcon));
-            return Utility.getText(driver, numberOfProductsOnCartIcon);
+            LogsUtil.info("number of products on cart :" + GeneralUtils.getText(driver, numberOfProductsOnCartIcon));
+            return GeneralUtils.getText(driver, numberOfProductsOnCartIcon);
         } catch (Exception e) {
-            LogsUtils.error(e.getMessage());
+            LogsUtil.error(e.getMessage());
             return "0";
         }
     }
@@ -57,10 +61,10 @@ public class P02_LandingPage {
     public String getNumberOfSelectedProducts() {
         try {
             selectedProducts = driver.findElements(numberOfSelectedProducts);
-            LogsUtils.info("selected products :" + (selectedProducts.size()));
+            LogsUtil.info("selected products :" + (selectedProducts.size()));
             return String.valueOf(selectedProducts.size());
         } catch (Exception e) {
-            LogsUtils.error(e.getMessage());
+            LogsUtil.error(e.getMessage());
             return "0";
         }
     }
@@ -71,20 +75,22 @@ public class P02_LandingPage {
     }
 
     public P02_LandingPage addRandomProducts(int numberOfProductsNeeded, int totalNumberOfProducts) {
-        Set<Integer> randomNumbers = Utility.generateUniqueNumbers(numberOfProductsNeeded, totalNumberOfProducts);
+        Set<Integer> randomNumbers = GeneralUtils.generateUniqueNumbers(numberOfProductsNeeded, totalNumberOfProducts);
         for (int random : randomNumbers) {
-            LogsUtils.info("random number : " + random);
+            LogsUtil.info("random number : " + random);
+
             //dynamic locator
             By addToCartButtonForAllProducts = By.xpath("(//button[@class])[" + random + "]");
-            Utility.clickingOnElement(driver, addToCartButtonForAllProducts);
+
+            GeneralUtils.clickingOnElement(driver, addToCartButtonForAllProducts);
 
         }
-        // to stay in the current page
+
         return this;
     }
 
     public P03_CartPage clickOnCartIcon() {
-        Utility.clickingOnElement(driver, cartIcon);
+        GeneralUtils.clickingOnElement(driver, cartIcon);
         return new P03_CartPage(driver);
     }
 
@@ -96,13 +102,13 @@ public class P02_LandingPage {
                 //dynamic locator
                 By elements = By.xpath("(//button[.=\"REMOVE\"] //preceding-sibling::div[@class='inventory_item_price'])[" + i + "]");
 
-                String fullText = Utility.getText(driver, elements);
-                LogsUtils.info("total price :" + totalPrice);
+                String fullText = GeneralUtils.getText(driver, elements);
+                LogsUtil.info("total price :" + totalPrice);
                 totalPrice += Float.parseFloat(fullText.replace("$", ""));
             }
             return String.valueOf(totalPrice);
         } catch (Exception e) {
-            LogsUtils.error(e.getMessage());
+            LogsUtil.error(e.getMessage());
             return "0";
         }
     }

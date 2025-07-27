@@ -1,7 +1,7 @@
 package Pages;
 
-import Utilities.LogsUtils;
-import Utilities.Utility;
+import Utils.GeneralUtils;
+import Utils.LogsUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,16 +10,20 @@ import java.util.List;
 
 public class P03_CartPage {
 
+    // Variables :
     static float totalPrice = 0;
+    private final WebDriver driver;
+
+    // Locators :
     private final By pricesOfSelectedProducts = By.xpath("//button[.=\"REMOVE\"] //preceding-sibling::div[@class='inventory_item_price']");
     private final By checkoutButton = By.xpath("//a[@class='btn_action checkout_button']");
 
-    private final WebDriver driver;
-
+    // Constructor :
     public P03_CartPage(WebDriver driver) {
         this.driver = driver;
     }
 
+    // Actions (Methods) :
     public String getTotalPrice() {
         try {
             List<WebElement> pricesOfSelectedProducts = driver.findElements(this.pricesOfSelectedProducts);
@@ -28,13 +32,13 @@ public class P03_CartPage {
                 //dynamic locator
                 By elements = By.xpath("(//button[.=\"REMOVE\"] //preceding-sibling::div[@class='inventory_item_price'])[" + i + "]");
 
-                String fullText = Utility.getText(driver, elements);
-                LogsUtils.info("total price :" + totalPrice);
+                String fullText = GeneralUtils.getText(driver, elements);
+                LogsUtil.info("total price :" + totalPrice);
                 totalPrice += Float.parseFloat(fullText.replace("$", ""));
             }
             return String.valueOf(totalPrice);
         } catch (Exception e) {
-            LogsUtils.error(e.getMessage());
+            LogsUtil.error(e.getMessage());
             return "0";
         }
     }
@@ -44,7 +48,7 @@ public class P03_CartPage {
     }
 
     public P04_CheckoutPage clickOnCheckoutButton() {
-        Utility.clickingOnElement(driver, checkoutButton);
+        GeneralUtils.clickingOnElement(driver, checkoutButton);
         return new P04_CheckoutPage(driver);
 
     }
