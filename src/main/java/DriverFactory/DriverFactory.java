@@ -12,10 +12,7 @@ public class DriverFactory {
 
     /* ThreadLocal to ensure each thread has its own instance of WebDriver.
        This is useful in parallel test execution scenarios.
-       where multiple threads may be running tests simultaneously.
-       It prevents interference between tests by ensuring that each thread has its own instance of the WebDriver.
-       This is particularly important in frameworks like TestNG or JUnit where tests can be run in parallel.
-       When a new thread is created, it will have its own instance of WebDriver, and when the thread completes, it can safely remove its instance. */
+       where multiple threads may be running tests simultaneously. */
     private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
     public static void setupDriver(String browser) {

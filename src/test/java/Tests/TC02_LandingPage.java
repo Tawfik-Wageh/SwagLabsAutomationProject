@@ -29,7 +29,7 @@ public class TC02_LandingPage {
     @BeforeClass
     public void login() throws IOException {
 
-        // Shorthand if statement (condition ? true: false)
+
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : getPropertyValue("environment", "BROWSER");
 
         LogsUtil.info(System.getProperty("browser"));
@@ -45,7 +45,7 @@ public class TC02_LandingPage {
                 .enterPassword(PASSWORD)
                 .clickOnLoginButton();
 
-        // Save cookies after login
+        // Save cookies after login to restore session later
         cookies = getAllCookies(getDriver());
 
         quitDriver();
@@ -55,7 +55,7 @@ public class TC02_LandingPage {
     @BeforeMethod
     public void setup() throws IOException {
 
-        // Shorthand if statement (condition ? true: false)
+
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : getPropertyValue("environment", "BROWSER");
 
         LogsUtil.info(System.getProperty("browser"));

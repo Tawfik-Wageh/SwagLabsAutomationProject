@@ -31,7 +31,7 @@ public class TC01_LoginPage {
 
         LogsUtil.info(System.getProperty("browser"));
         setupDriver(browser);
-        LogsUtil.info("Edge driver is opened");
+        LogsUtil.info("driver is opened");
         getDriver().get(getPropertyValue("environment", "BASE_URL"));
         LogsUtil.info("Page is redirected to the URL");
         getDriver().manage().timeouts()

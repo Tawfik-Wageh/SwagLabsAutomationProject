@@ -34,7 +34,7 @@ public class TC05_OverviewPage {
     @BeforeMethod
     public void setup() throws IOException {
 
-        // Shorthand if: (condition)? valueIfTrue: valueIfFalse
+
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : getPropertyValue("environment", "BROWSER");
 
         LogsUtil.info(System.getProperty("browser"));

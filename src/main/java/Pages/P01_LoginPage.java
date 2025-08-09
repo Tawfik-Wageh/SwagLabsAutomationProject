@@ -15,8 +15,7 @@ public class P01_LoginPage {
     // variables :
     private final WebDriver driver;
 
-    // Constructor:
-    // The constructor initializes the WebDriver instance for the login page.
+    // Constructor: initializes the WebDriver instance for the login page.
     public P01_LoginPage(WebDriver driver) {
         this.driver = driver;
     }

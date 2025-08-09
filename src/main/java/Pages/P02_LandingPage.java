@@ -30,16 +30,13 @@ public class P02_LandingPage {
     }
 
     // Actions (Methods) :
-    public By getNumberOfSelectedProductsOnCart() {
-        return numberOfProductsOnCartIcon;
-    }
 
     public P02_LandingPage addAllProductsToCart() {
         allProducts = driver.findElements(addToCartButtonForAllProducts);
         LogsUtil.info("number of all products : " + allProducts.size());
         for (int i = 1; i <= allProducts.size(); i++) {
 
-            //dynamic locator
+            //dynamic locator :
             By addToCartButtonForAllProducts = By.xpath("(//button[@class])[" + i + "]");
 
             GeneralUtils.clickingOnElement(driver, addToCartButtonForAllProducts);
@@ -79,7 +76,7 @@ public class P02_LandingPage {
         for (int random : randomNumbers) {
             LogsUtil.info("random number : " + random);
 
-            //dynamic locator
+            //dynamic locator :
             By addToCartButtonForAllProducts = By.xpath("(//button[@class])[" + random + "]");
 
             GeneralUtils.clickingOnElement(driver, addToCartButtonForAllProducts);
@@ -99,7 +96,7 @@ public class P02_LandingPage {
             List<WebElement> pricesOfSelectedProducts = driver.findElements(this.pricesOfSelectedProducts);
             for (int i = 1; i <= pricesOfSelectedProducts.size(); i++) {
 
-                //dynamic locator
+                //dynamic locator :
                 By elements = By.xpath("(//button[.=\"REMOVE\"] //preceding-sibling::div[@class='inventory_item_price'])[" + i + "]");
 
                 String fullText = GeneralUtils.getText(driver, elements);

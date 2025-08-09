@@ -42,11 +42,13 @@ public class IInvokedMethodListener implements org.testng.IInvokedMethodListener
         }
         // +++++++++++++++++++++++++++++++++++++++++
 
-
+        // +++++++++++++++++++++++++++++++++++++++++
+        // to take a screenshot if the test failed and attach it to Allure Report
         if (testResult.getStatus() == ITestResult.FAILURE) {
             LogsUtil.info("Test Case" + testResult.getName() + "Failed");
             GeneralUtils.takingScreenShot(getDriver(), testResult.getName());
 
         }
+        // +++++++++++++++++++++++++++++++++++++++++
     }
 }

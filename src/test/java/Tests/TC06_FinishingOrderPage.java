@@ -35,7 +35,7 @@ public class TC06_FinishingOrderPage {
     @BeforeMethod
     public void setup() throws IOException {
 
-        // Shorthand if statement (condition ? true: false)
+
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : getPropertyValue("environment", "BROWSER");
 
         LogsUtil.info(System.getProperty("browser"));

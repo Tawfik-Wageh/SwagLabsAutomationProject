@@ -1,0 +1,7 @@
+[DEBUG] - [09-08-2025 18:52:24] [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml"
+[INFO] - [09-08-2025 18:52:25] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml
+
+[INFO] - [09-08-2025 18:52:25] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:32)] - null
+[INFO] - [09-08-2025 18:52:27] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:34)] - driver is opened
+[INFO] - [09-08-2025 18:52:28] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:36)] - Page is redirected to the URL

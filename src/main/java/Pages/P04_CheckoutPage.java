@@ -3,9 +3,6 @@ package Pages;
 import Utils.GeneralUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import static Utils.GeneralUtils.generalWait;
 
 public class P04_CheckoutPage {
 
@@ -40,13 +37,5 @@ public class P04_CheckoutPage {
         return new P05_OverviewPage(driver);
     }
 
-    public boolean verifyURL(String expectedURL) {
-        try {
-            generalWait(driver).until(ExpectedConditions.urlToBe(expectedURL));
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
-    }
 
 }

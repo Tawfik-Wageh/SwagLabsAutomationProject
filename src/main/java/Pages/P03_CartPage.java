@@ -29,7 +29,7 @@ public class P03_CartPage {
             List<WebElement> pricesOfSelectedProducts = driver.findElements(this.pricesOfSelectedProducts);
             for (int i = 1; i <= pricesOfSelectedProducts.size(); i++) {
 
-                //dynamic locator
+                //dynamic locator :
                 By elements = By.xpath("(//button[.=\"REMOVE\"] //preceding-sibling::div[@class='inventory_item_price'])[" + i + "]");
 
                 String fullText = GeneralUtils.getText(driver, elements);

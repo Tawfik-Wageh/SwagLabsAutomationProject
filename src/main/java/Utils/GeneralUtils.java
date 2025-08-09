@@ -48,6 +48,8 @@ public class GeneralUtils {
     }
 
     public static WebDriverWait generalWait(WebDriver driver) {
+
+        // Explicit wait
         return new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
@@ -78,6 +80,7 @@ public class GeneralUtils {
 
     }
 
+    // Method to take a full page screenshot and highlight a specific element using Shutterbug
     public static void takingFullScreenshot(WebDriver driver, By locator) {
         try {
             Shutterbug.shootPage(driver, Capture.FULL_SCROLL)
