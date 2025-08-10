@@ -26,7 +26,7 @@ public class TC02_LandingPage {
     private final String PASSWORD = DataUtil.getJsonData("validLogin", "password");
     private Set<Cookie> cookies;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void login() throws IOException {
 
 
@@ -52,7 +52,7 @@ public class TC02_LandingPage {
     }
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
 
 
@@ -73,30 +73,60 @@ public class TC02_LandingPage {
     }
 
     // Test Cases :
-    @Test
+    @Test(priority = 1)
     public void checkingNumberOfSelectedProducts() {
         new P02_LandingPage(getDriver()).addAllProductsToCart();
         Assert.assertTrue(new P02_LandingPage(getDriver()).comparingNumberOfSelectedProductsWithCart());
     }
 
-    @Test
+    @Test(priority = 2)
     public void addingRandomProductsToCart() {
         new P02_LandingPage(getDriver()).addRandomProducts(3, 6);
         Assert.assertTrue(new P02_LandingPage(getDriver()).comparingNumberOfSelectedProductsWithCart());
     }
 
-    @Test
+    @Test(priority = 3)
+    public void verifyPriceSortingLowToHigh() {
+        P02_LandingPage landingPage = new P02_LandingPage(getDriver());
+
+        landingPage.selectPriceLowToHigh();
+        boolean isSorted = landingPage.verifyPricesSortedLowToHigh();
+
+        Assert.assertTrue(isSorted, "Prices are not sorted correctly (low to high)");
+    }
+
+    @Test(priority = 4)
     public void clickOnCartIcon() throws IOException {
         new P02_LandingPage(getDriver()).clickOnCartIcon();
         Assert.assertTrue(verifyURL(getDriver(), DataUtil.getPropertyValue("environment", "CART_URL")));
     }
 
-    @AfterMethod
+    @Test(priority = 5)
+    public void clickOnAboutButton() throws IOException {
+        new P02_LandingPage(getDriver()).clickOnMenuButton().clickOnAboutButton();
+        Assert.assertTrue(verifyURL(getDriver(), DataUtil.getPropertyValue("environment", "ABOUT_URL")));
+    }
+
+    @Test(priority = 6)
+    public void testGoBackToPreviousPage() throws IOException {
+        new P02_LandingPage(getDriver()).clickOnMenuButton().clickOnAboutButton().goBackToPreviousPage();
+        Assert.assertTrue(verifyURL(getDriver(), DataUtil.getPropertyValue("environment", "HOME_URL")));
+    }
+
+    @Test(priority = 7)
+    public void clickOnLogoutButton() throws IOException {
+        new P02_LandingPage(getDriver()).clickOnMenuButton().clickOnLogoutButton();
+        Assert.assertTrue(verifyURL(getDriver(), DataUtil.getPropertyValue("environment", "BASE_URL")));
+
+    }
+
+
+    @AfterMethod(alwaysRun = true)
     public void quit() {
         quitDriver();
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void deleteSession() {
 
         // clear cookies after finishing session

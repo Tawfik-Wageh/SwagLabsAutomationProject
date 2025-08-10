@@ -18,6 +18,7 @@ import java.time.Duration;
 
 import static DriverFactory.DriverFactory.*;
 import static Utils.DataUtil.getPropertyValue;
+import static Utils.GeneralUtils.verifyURL;
 
 @Listeners({IInvokedMethodListener.class, ITestResultListener.class})
 public class TC05_OverviewPage {
@@ -68,6 +69,34 @@ public class TC05_OverviewPage {
         LogsUtil.info(firstName + " " + lastName + " " + zipCode);
 
         Assert.assertTrue(new P05_OverviewPage(getDriver()).comparingPrices());
+    }
+
+    @Test
+    public void cancelCheckout() throws IOException {
+        //TODO:Login Steps
+        new P01_LoginPage(getDriver())
+                .enterUsername(USERNAME)
+                .enterPassword(PASSWORD)
+                .clickOnLoginButton();
+        //TODO:Adding products steps
+        new P02_LandingPage(getDriver())
+                .addAllProductsToCart()
+                .clickOnCartIcon();
+        //TODO:Go to checkout Page steps
+        new P03_CartPage(getDriver())
+                .clickOnCheckoutButton();
+        //TODO:filling information steps
+        new P04_CheckoutPage(getDriver()).fillingInformationForm(firstName, lastName, zipCode)
+                .clickingOnContinueButton();
+        //TODO:Cancel checkout steps
+        new P05_OverviewPage(getDriver())
+                .clickOnCancelButton();
+
+        LogsUtil.info("Cancel button is clicked");
+
+        Assert.assertTrue(verifyURL(getDriver(), DataUtil.getPropertyValue("environment", "HOME_URL")));
+
+
     }
 
     @AfterMethod

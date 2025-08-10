@@ -23,6 +23,11 @@ public class P02_LandingPage {
     private final By numberOfSelectedProducts = By.xpath("//button[.='REMOVE']");
     private final By cartIcon = By.className("shopping_cart_link");
     private final By pricesOfSelectedProducts = By.xpath("//button[.=\"REMOVE\"] //preceding-sibling::div[@class='inventory_item_price']");
+    private final By sortDropdown = By.className("product_sort_container");
+    private final By productPrices = By.className("inventory_item_price");
+    private final By menuButtonContainer = By.className("bm-burger-button");
+    private final By logoutButton = By.id("logout_sidebar_link");
+    private final By AboutButton = By.id("about_sidebar_link");
 
     // Constructor :
     public P02_LandingPage(WebDriver driver) {
@@ -86,9 +91,9 @@ public class P02_LandingPage {
         return this;
     }
 
-    public P03_CartPage clickOnCartIcon() {
+    public void clickOnCartIcon() {
         GeneralUtils.clickingOnElement(driver, cartIcon);
-        return new P03_CartPage(driver);
+
     }
 
     public String getTotalPriceOfSelectedProducts() {
@@ -108,6 +113,46 @@ public class P02_LandingPage {
             LogsUtil.error(e.getMessage());
             return "0";
         }
+    }
+
+    public P02_LandingPage selectPriceLowToHigh() {
+        GeneralUtils.selectDropdownByValue(driver, sortDropdown, "lohi");
+        LogsUtil.info("Selected 'Price (low to high)' from dropdown");
+        return this;
+    }
+
+    public List<String> getAllProductPrices() {
+        List<WebElement> priceElements = driver.findElements(productPrices);
+        return GeneralUtils.getTextFromElements(priceElements);
+    }
+
+    public boolean verifyPricesSortedLowToHigh() {
+        List<String> prices = getAllProductPrices();
+        boolean isSorted = GeneralUtils.isSortedAscending(prices);
+        LogsUtil.info("Prices are sorted low to high: " + isSorted);
+        return isSorted;
+    }
+
+    public void goBackToPreviousPage() {
+        driver.navigate().back();
+        LogsUtil.info("Navigated back to the previous page");
+    }
+
+
+    public P02_LandingPage clickOnMenuButton() {
+        GeneralUtils.clickingOnElement(driver, menuButtonContainer);
+        return this;
+    }
+
+    public P02_LandingPage clickOnAboutButton() {
+        GeneralUtils.clickingOnElement(driver, AboutButton);
+        return this;
+
+    }
+
+    public void clickOnLogoutButton() {
+        GeneralUtils.clickingOnElement(driver, logoutButton);
+
     }
 
 }

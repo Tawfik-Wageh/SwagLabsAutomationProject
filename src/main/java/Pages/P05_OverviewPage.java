@@ -11,7 +11,8 @@ public class P05_OverviewPage {
     private final By itemTotal = By.className("summary_subtotal_label");
     private final By tax = By.className("summary_tax_label");
     private final By total = By.className("summary_total_label");
-    private final By finishButton = By.xpath("//a[text()='FINISH']");
+    private final By finishButton = By.xpath("//div[@class='cart_footer']/a[2]");
+    private final By cancelButton = By.xpath("//div[@class='cart_footer']/a[1]");
 
     // variables :
     private final WebDriver driver;
@@ -44,8 +45,15 @@ public class P05_OverviewPage {
         return calculateTotalPrice().equals(String.valueOf(getTotal()));
     }
 
-    public P06_FinishingOrderPage clickOnFinishButton() {
+    public void clickOnFinishButton() {
         GeneralUtils.clickingOnElement(driver, finishButton);
-        return new P06_FinishingOrderPage(driver);
+
     }
+
+    public void clickOnCancelButton() {
+        GeneralUtils.clickingOnElement(driver, cancelButton);
+
+
+    }
+
 }

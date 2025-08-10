@@ -1,9 +1,0 @@
-[DEBUG] - [09-08-2025 18:55:44] [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml"
-[INFO] - [09-08-2025 18:55:45] [main] [org.testng.internal.Utils] - [TestNG] Running:
-  C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.1\temp-testng-customsuite.xml
-
-[INFO] - [09-08-2025 18:55:45] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:32)] - null
-[INFO] - [09-08-2025 18:55:46] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:34)] - driver is opened
-[INFO] - [09-08-2025 18:55:47] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:36)] - Page is redirected to the URL
-[INFO] - [09-08-2025 18:55:47] [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CasevalidLoginTCStarted
-[INFO] - [09-08-2025 18:55:48] [main] [Listeners.ITestResultListener.onTestSuccess(ITestResultListener.java:18)] - Test CasevalidLoginTCPassed

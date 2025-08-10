@@ -6,6 +6,7 @@ import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
@@ -14,6 +15,7 @@ import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class GeneralUtils {
 
@@ -114,6 +116,37 @@ public class GeneralUtils {
         return true;
     }
 
+    public static void selectDropdownByVisibleText(WebDriver driver, By dropdownLocator, String visibleText) {
+        WebElement dropdownElement = driver.findElement(dropdownLocator);
+        Select dropdown = new Select(dropdownElement);
+        dropdown.selectByVisibleText(visibleText);
+    }
+
+    public static void selectDropdownByValue(WebDriver driver, By dropdownLocator, String value) {
+        WebElement dropdownElement = driver.findElement(dropdownLocator);
+        Select dropdown = new Select(dropdownElement);
+        dropdown.selectByValue(value);
+    }
+
+    public static boolean isSortedAscending(List<String> prices) {
+        List<Double> priceValues = prices.stream()
+                .map(price -> Double.parseDouble(price.replace("$", "")))
+                .toList();
+
+        for (int i = 0; i < priceValues.size() - 1; i++) {
+            if (priceValues.get(i) > priceValues.get(i + 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static List<String> getTextFromElements(List<WebElement> elements) {
+        return elements.stream()
+                .map(WebElement::getText)
+                .collect(Collectors.toList());
+    }
+
     // ++++++++++++++++++++++++++++++++
     // to add last Log's file to Allure Report
     public static File getLatestFile(String folderPath) {
@@ -140,6 +173,7 @@ public class GeneralUtils {
             driver.manage().addCookie(cookie);
         }
     }
+
     // +++++++++++++++++++++++++++++++
 
 }

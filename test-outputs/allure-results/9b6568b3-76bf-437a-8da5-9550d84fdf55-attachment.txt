@@ -1,0 +1,51 @@
+[DEBUG] - [10-08-2025 15:12:38] [main] [org.testng.TestNG] - suiteXmlPath: "G:\Software Testing\Automation Testing\Training&Projects\Automation Projects\SwagLabsAutomationProject\TestRunner\LandingSuite.xml"
+[INFO] - [10-08-2025 15:12:39] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  G:\Software Testing\Automation Testing\Training&Projects\Automation Projects\SwagLabsAutomationProject\TestRunner\LandingSuite.xml
+
+[INFO] - [10-08-2025 15:12:39] [main] [Tests.TC02_LandingPage.login(TC02_LandingPage.java:35)] - null
+[INFO] - [10-08-2025 15:12:41] [main] [Tests.TC02_LandingPage.login(TC02_LandingPage.java:37)] - Edge driver is opened
+[INFO] - [10-08-2025 15:12:42] [main] [Tests.TC02_LandingPage.login(TC02_LandingPage.java:39)] - Page is redirected to the URL
+[INFO] - [10-08-2025 15:12:43] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:61)] - null
+[INFO] - [10-08-2025 15:12:45] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:63)] - Edge driver is opened
+[INFO] - [10-08-2025 15:12:45] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:65)] - Page is redirected to the URL
+[INFO] - [10-08-2025 15:12:48] [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CasecheckingNumberOfSelectedProductsStarted
+[INFO] - [10-08-2025 15:12:48] [main] [Pages.P02_LandingPage.addAllProductsToCart(P02_LandingPage.java:41)] - number of all products : 6
+[INFO] - [10-08-2025 15:12:49] [main] [Pages.P02_LandingPage.getNumberOfProductsOnCartIcon(P02_LandingPage.java:55)] - number of products on cart :6
+[INFO] - [10-08-2025 15:12:49] [main] [Pages.P02_LandingPage.getNumberOfSelectedProducts(P02_LandingPage.java:66)] - selected products :6
+[INFO] - [10-08-2025 15:12:49] [main] [Listeners.ITestResultListener.onTestSuccess(ITestResultListener.java:18)] - Test CasecheckingNumberOfSelectedProductsPassed
+[INFO] - [10-08-2025 15:12:49] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:61)] - null
+[INFO] - [10-08-2025 15:12:50] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:63)] - Edge driver is opened
+[INFO] - [10-08-2025 15:12:51] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:65)] - Page is redirected to the URL
+[INFO] - [10-08-2025 15:12:53] [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CaseaddingRandomProductsToCartStarted
+[INFO] - [10-08-2025 15:12:53] [main] [Pages.P02_LandingPage.addRandomProducts(P02_LandingPage.java:82)] - random number : 2
+[INFO] - [10-08-2025 15:12:53] [main] [Pages.P02_LandingPage.addRandomProducts(P02_LandingPage.java:82)] - random number : 4
+[INFO] - [10-08-2025 15:12:53] [main] [Pages.P02_LandingPage.addRandomProducts(P02_LandingPage.java:82)] - random number : 5
+[INFO] - [10-08-2025 15:12:54] [main] [Pages.P02_LandingPage.getNumberOfProductsOnCartIcon(P02_LandingPage.java:55)] - number of products on cart :3
+[INFO] - [10-08-2025 15:12:54] [main] [Pages.P02_LandingPage.getNumberOfSelectedProducts(P02_LandingPage.java:66)] - selected products :3
+[INFO] - [10-08-2025 15:12:54] [main] [Listeners.ITestResultListener.onTestSuccess(ITestResultListener.java:18)] - Test CaseaddingRandomProductsToCartPassed
+[INFO] - [10-08-2025 15:12:54] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:61)] - null
+[INFO] - [10-08-2025 15:12:55] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:63)] - Edge driver is opened
+[INFO] - [10-08-2025 15:12:55] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:65)] - Page is redirected to the URL
+[INFO] - [10-08-2025 15:12:57] [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CaseverifyPriceSortingLowToHighStarted
+[INFO] - [10-08-2025 15:12:57] [main] [Pages.P02_LandingPage.selectPriceLowToHigh(P02_LandingPage.java:120)] - Selected 'Price (low to high)' from dropdown
+[INFO] - [10-08-2025 15:12:58] [main] [Pages.P02_LandingPage.verifyPricesSortedLowToHigh(P02_LandingPage.java:132)] - Prices are sorted low to high: true
+[INFO] - [10-08-2025 15:12:58] [main] [Listeners.ITestResultListener.onTestSuccess(ITestResultListener.java:18)] - Test CaseverifyPriceSortingLowToHighPassed
+[INFO] - [10-08-2025 15:12:58] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:61)] - null
+[INFO] - [10-08-2025 15:13:00] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:63)] - Edge driver is opened
+[INFO] - [10-08-2025 15:13:00] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:65)] - Page is redirected to the URL
+[INFO] - [10-08-2025 15:13:02] [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CaseclickOnCartIconStarted
+[INFO] - [10-08-2025 15:13:02] [main] [Listeners.ITestResultListener.onTestSuccess(ITestResultListener.java:18)] - Test CaseclickOnCartIconPassed
+[INFO] - [10-08-2025 15:13:02] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:61)] - null
+[INFO] - [10-08-2025 15:13:03] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:63)] - Edge driver is opened
+[INFO] - [10-08-2025 15:13:04] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:65)] - Page is redirected to the URL
+[INFO] - [10-08-2025 15:13:05] [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CaseclickOnAboutButtonStarted
+[INFO] - [10-08-2025 15:13:11] [main] [Listeners.ITestResultListener.onTestSuccess(ITestResultListener.java:18)] - Test CaseclickOnAboutButtonPassed
+[INFO] - [10-08-2025 15:13:11] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:61)] - null
+[INFO] - [10-08-2025 15:13:12] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:63)] - Edge driver is opened
+[INFO] - [10-08-2025 15:13:13] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:65)] - Page is redirected to the URL
+[INFO] - [10-08-2025 15:13:14] [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CasetestGoBackToPreviousPageStarted
+[INFO] - [10-08-2025 15:13:21] [main] [Pages.P02_LandingPage.goBackToPreviousPage(P02_LandingPage.java:138)] - Navigated back to the previous page
+[INFO] - [10-08-2025 15:13:21] [main] [Listeners.ITestResultListener.onTestSuccess(ITestResultListener.java:18)] - Test CasetestGoBackToPreviousPagePassed
+[INFO] - [10-08-2025 15:13:21] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:61)] - null
+[INFO] - [10-08-2025 15:13:22] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:63)] - Edge driver is opened
+[INFO] - [10-08-2025 15:13:23] [main] [Tests.TC02_LandingPage.setup(TC02_LandingPage.java:65)] - Page is redirected to the URL
