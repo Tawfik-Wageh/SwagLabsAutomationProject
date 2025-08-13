@@ -41,7 +41,10 @@ public class P02_LandingPage {
         LogsUtil.info("number of all products : " + allProducts.size());
         for (int i = 1; i <= allProducts.size(); i++) {
 
-            //dynamic locator :
+            /* dynamic locator: (refers to a technique used to identify web elements whose attributes
+            (such as ID, class, name, or XPath) change dynamically or are generated at runtime.
+             These attributes may not have fixed values, making them harder to locate using static locators.)
+             */
             By addToCartButtonForAllProducts = By.xpath("(//button[@class])[" + i + "]");
 
             GeneralUtils.clickingOnElement(driver, addToCartButtonForAllProducts);

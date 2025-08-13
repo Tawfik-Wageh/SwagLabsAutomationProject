@@ -47,9 +47,9 @@ public class P03_CartPage {
         return getTotalPrice().equals(price);
     }
 
-    public P04_CheckoutPage clickOnCheckoutButton() {
+    public void clickOnCheckoutButton() {
         GeneralUtils.clickingOnElement(driver, checkoutButton);
-        return new P04_CheckoutPage(driver);
+
 
     }
 }

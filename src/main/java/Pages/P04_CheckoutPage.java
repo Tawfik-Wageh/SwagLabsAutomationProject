@@ -32,9 +32,9 @@ public class P04_CheckoutPage {
 
     }
 
-    public P05_OverviewPage clickingOnContinueButton() {
+    public void clickingOnContinueButton() {
         GeneralUtils.clickingOnElement(driver, continueButton);
-        return new P05_OverviewPage(driver);
+
     }
 
 
