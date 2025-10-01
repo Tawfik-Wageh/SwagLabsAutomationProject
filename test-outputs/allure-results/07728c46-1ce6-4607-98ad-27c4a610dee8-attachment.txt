@@ -1,0 +1,8 @@
+[DEBUG] - [26-09-2025 16:47:25] [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml"
+[INFO] - [26-09-2025 16:47:26] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+[INFO] - [26-09-2025 16:47:26] [main] [Tests.TC01_LoginPage.setup(TC01_LoginPage.java:32)] - null
+[INFO] - [26-09-2025 16:47:28] [main] [Listeners.IInvokedMethodListener.afterInvocation(IInvokedMethodListener.java:48)] - Test CasesetupFailed
+[ERROR] - [26-09-2025 16:47:28] [main] [Utils.GeneralUtils.takingScreenShot(GeneralUtils.java:80)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
+[INFO] - [26-09-2025 16:47:28] [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CasevalidLoginTCStarted

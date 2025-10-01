@@ -1,0 +1,5 @@
+[DEBUG] - [26-09-2025 16:48:23] [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml"
+[INFO] - [26-09-2025 16:48:23] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+[INFO] - [26-09-2025 16:48:24] [main] [Tests.TC03_CartPage.setup(TC03_CartPage.java:32)] - null

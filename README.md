@@ -1,94 +1,109 @@
-Swag Labs Web Test Automation Project
+# SwagLabsAutomationProject
 
-Overview
-This project provides automated test coverage for the Swag Labs web application (https://www.saucedemo.com/). The framework is built using Selenium WebDriver with Java and follows industry best practices for maintainable and scalable test automation.
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://shields.io/) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Key Features
-- Page Object Model (POM) Design Pattern: Organized structure for easy maintenance
-- Data-Driven Testing: Supports multiple test data sets via external files
-- Allure Reporting: Comprehensive HTML reports with screenshots and step logging
-- TestNG Framework: Powerful test execution and parallel testing capabilities
-- Log4j Integration: Detailed logging for debugging and analysis
-- Cross-Browser Testing: Support for Chrome, Firefox, Edge, etc.
-- CI/CD Ready: Designed for easy integration with Jenkins/GitHub Actions
+## Overview
 
-Technologies Used
+This project automates end-to-end testing for the Swag Labs web application using Selenium WebDriver, TestNG, and Allure
+reporting. It covers login, landing, cart, checkout, overview, and order finishing workflows.
+
+## Features
+
+- Automated UI testing for all major workflows
+- Page Object Model for maintainable code
+- Data-driven testing support
+- Allure reporting integration
+- Screenshots and logs on failure
+- Modular test suites (Login, Cart, Checkout, etc.)
+
+## Technologies Used
+
 - Java 8+
-- Selenium WebDriver 4.x
-- TestNG 7.x
-- Allure Report 2.x
-- Log4j 2.x
-- Maven (for dependency management)
+- Maven
+- Selenium WebDriver
+- TestNG
+- Allure Reporting
+- Log4j2
 
-Project Structure
-swag-labs-automation/
-├── src/main/java/
-│   ├── pages/          # Page Object classes
-│   ├── utils/          # Helper/utility classes
-│   ├── listeners/      # TestNG listeners
-│   └── constants/      # Constant values
-├── src/test/java/
-│   ├── tests/          # Test classes
-│   ├── runners/        # Test runners
-│   └── dataproviders/  # Data provider classes
-├── src/test/resources/
-│   ├── testdata/       # Test data files (JSON/CSV/Excel)
-│   ├── config/         # Configuration files
-│   └── log4j2.xml      # Logging configuration
-├── pom.xml             # Maven dependencies
-└── README.md           # Project documentation
+## Folder Structure
 
-Prerequisites
-- Java JDK 8 or higher
-- Maven 3.6.0 or higher
-- Chrome/Firefox browser installed
-- Allure commandline tools (for report generation)
+- `pom.xml` - Maven configuration file.
+- `src/main/java/` - Main source code:
+    - `DriverFactory/` - WebDriver setup and management.
+    - `Pages/` - Page Object Model classes for each app page.
+    - `Utils/` - Utility classes (data, logging, general helpers).
+- `src/test/java/` - Test source code:
+    - `Listeners/` - TestNG listeners for reporting and logging.
+    - `Tests/` - Test classes for different suites.
+- `src/test/resources/TestData/` - Test data files.
+- `test-outputs/` - Output files (Allure results, logs, screenshots).
+- `TestRunner/` - XML suite files for running grouped tests.
 
-Setup Instructions
+## Prerequisites
+
+- Java 8 or higher
+- Maven 3.6+
+- Chrome/Firefox browser (WebDriver binaries should be configured)
+
+## Setup Instructions
+
 1. Clone the repository:
-   git clone https://github.com/yourusername/swag-labs-automation.git
-2. Navigate to project directory:
-   cd swag-labs-automation
+   ```
+   git clone <repo-url>
+   ```
+2. Navigate to the project directory:
+   ```
+   cd SwagLabsAutomationProject
+   ```
 3. Install dependencies:
+   ```
    mvn clean install
+   ```
 
-Running Tests
-To run all tests:
-mvn clean test
+## How to Run Tests
 
-To run tests with specific TestNG suite:
-mvn test -Dsurefire.suiteXmlFiles=testng.xml
+- To run all tests:
+  ```
+  mvn test
+  ```
+- To run a specific suite:
+  ```
+  mvn test -DsuiteXmlFile=TestRunner/LoginSuite.xml
+  ```
+  (Replace with desired suite XML file)
 
-To run tests in parallel (example with 2 threads):
-mvn test -DthreadCount=2
+## Reporting
 
-Generating Reports
-After test execution, generate Allure report:
-allure serve allure-results
+- Allure results are generated in `test-outputs/allure-results/`.
+- To generate and view Allure report:
+    1. Install Allure commandline (https://docs.qameta.io/allure/)
+    2. Run:
+       ```
+       allure serve test-outputs/allure-results
+       ```
+- Logs and screenshots are saved in `test-outputs/Logs/` and `test-outputs/ScreenShots/`.
 
-Configuration
-Edit config.properties file to modify:
-- Application URL
-- Browser settings
-- Timeout values
-- User credentials
+## Troubleshooting
 
-Test Data Management
-Test data is stored in:
-- /src/test/resources/testdata/ directory
-- Supports JSON, CSV, and Excel formats
+- **WebDriver not found:** Ensure ChromeDriver/GeckoDriver is in your PATH or configured in the project.
+- **Allure command not recognized:** Install Allure CLI and add it to your system PATH.
+- **Tests not running:** Check Java and Maven versions, and ensure dependencies are installed.
 
-Logging
-Logs are generated in:
-- Console output
-- logs/automation.log file
-- Allure report attachments
+## FAQ
 
-CI/CD Integration
-Sample Jenkins pipeline script included in jenkinsfile
+**Q: How do I add a new test?**  
+A: Create a new class in `src/test/java/Tests/` and follow the Page Object Model structure.
 
-Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+**Q: How do I change browser settings?**  
+A: Update the WebDriver configuration in `DriverFactory/DriverFactory.java`.
 
-License
-[MIT](https://choosealicense.com/licenses/mit/)
+**Q: Where are test results stored?**  
+A: Allure results, logs, and screenshots are in the `test-outputs/` folder.
+
+## Contribution Guidelines
+
+Feel free to fork and submit pull requests. Please follow the Page Object Model and keep code modular.
+
+## License
+
+This project is for educational and demonstration purposes.

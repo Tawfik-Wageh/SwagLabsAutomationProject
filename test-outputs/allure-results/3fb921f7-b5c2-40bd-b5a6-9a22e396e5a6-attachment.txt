@@ -1,0 +1,9 @@
+[DEBUG] - [26-09-2025 16:48:23] [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml"
+[INFO] - [26-09-2025 16:48:23] [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\Options\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+[INFO] - [26-09-2025 16:48:24] [main] [Tests.TC03_CartPage.setup(TC03_CartPage.java:32)] - null
+[INFO] - [26-09-2025 16:48:25] [main] [Listeners.IInvokedMethodListener.afterInvocation(IInvokedMethodListener.java:48)] - Test CasesetupFailed
+[ERROR] - [26-09-2025 16:48:25] [main] [Utils.GeneralUtils.takingScreenShot(GeneralUtils.java:80)] - Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "driver" is null
+[INFO] - [26-09-2025 16:48:25] [main] [Listeners.ITestResultListener.onTestStart(ITestResultListener.java:12)] - Test CasecomparingPricesStarted
+[INFO] - [26-09-2025 16:48:25] [main] [Listeners.ITestResultListener.onTestSkipped(ITestResultListener.java:24)] - Test CasecomparingPricesSkipped
